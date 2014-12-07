@@ -3,8 +3,21 @@
 
     <string name="app_name">Sunshine</string>
     <string name="hello_world">Hello world!</string>
+    <!--for settings -->
     <string name="action_settings">Settings</string>
+
+    <!--Menu label to fetch updated weather info from server -->
     <string name="action_refresh">Refresh</string>
     <string name="title_activity_detail">DetailActivity</string>
+    <string name="title_settings_activity">SettingsActivity</string>
+
+    <!--Key name for storing location in SharedPreferences (CHAR LIMIT = NONE)-->
+    <string name="pref_location_key" translatable="false">location</string>
+
+    <!--Label for location preference (CHAR LIMIT = 30)-->
+    <string name="pref_location_label">Location</string>
+
+    <!--Default Postal Code for location preference (CHAR LIMIT = NONE)-->
+    <string name="pref_location_default" translatable="false">94043</string>
 
 </resources>
