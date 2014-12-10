@@ -20,4 +20,18 @@
     <!--Default Postal Code for location preference (CHAR LIMIT = NONE)-->
     <string name="pref_location_default" translatable="false">94043</string>
 
+    <!--Key name for storing temperature units in SharedPreferences (CHAR LIMIT = NONE)-->
+    <string name="pref_units_key" translatable="false">units</string>
+
+    <!--Label for temperature units preference (CHAR LIMIT = 30)-->
+    <string name="pref_units_label">Temperature Units</string>
+
+    <!--Default temperature units preference (CHAR LIMIT = NONE)-->
+    <string name="pref_units_metric" translatable="false">metric</string>
+    <string name="pref_units_imperial" translatable="false">imperial</string>
+
+    <string name="action_map">Action Map</string>
+
+
+
 </resources>
