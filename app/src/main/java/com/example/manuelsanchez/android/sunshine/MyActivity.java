@@ -17,6 +17,7 @@ public class MyActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // The activity is being created.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
         if (savedInstanceState == null) {
@@ -24,8 +25,50 @@ public class MyActivity extends ActionBarActivity {
                     .add(R.id.container, new ForecastFragment())
                     .commit();
         }
+        Log.d(LOG_TAG, "onCreate()");
+
     }
 
+    @Override
+    protected void onStart() {
+        // The activity is about to become visible.
+        super.onStart();
+
+        Log.d(LOG_TAG, "onStart()");
+
+    }
+
+    @Override
+    protected void onResume() {
+        // The activity has become visible (it is now "resumed").
+        super.onResume();
+        Log.d(LOG_TAG, "onResume()");
+
+    }
+
+    @Override
+    protected void onPause() {
+        // Another activity is taking focus (this activity is about to be "paused").
+        super.onPause();
+        Log.d(LOG_TAG, "onPause()");
+
+    }
+
+    @Override
+    protected void onStop() {
+        // The activity is no longer visible (it is now "stopped")
+        super.onStop();
+        Log.d(LOG_TAG, "onStop()");
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        // The activity is about to be destroyed.
+        super.onDestroy();
+        Log.d(LOG_TAG, "onDestroy()");
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

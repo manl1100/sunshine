@@ -31,6 +31,7 @@
     <string name="pref_units_imperial" translatable="false">imperial</string>
 
     <string name="action_map">Action Map</string>
+    <string name="action_share">Share</string>
 
 
 
