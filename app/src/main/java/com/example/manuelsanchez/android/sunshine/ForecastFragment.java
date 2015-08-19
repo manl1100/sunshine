@@ -20,6 +20,7 @@ import android.widget.ListView;
 import com.example.manuelsanchez.android.sunshine.data.WeatherContract;
 import com.example.manuelsanchez.android.sunshine.data.WeatherContract.LocationEntry;
 import com.example.manuelsanchez.android.sunshine.data.WeatherContract.WeatherEntry;
+import com.example.manuelsanchez.android.sunshine.service.SunshineService;
 
 import java.util.Date;
 
@@ -47,6 +48,7 @@ public class ForecastFragment extends Fragment implements LoaderManager.LoaderCa
             WeatherEntry.COLUMN_SHORT_DESC,
             WeatherEntry.COLUMN_MAX_TEMP,
             WeatherEntry.COLUMN_MIN_TEMP,
+            WeatherEntry.COLUMN_WEATHER_ID,
             LocationEntry.COLUMN_LOCATION_SETTING
     };
 
@@ -57,7 +59,8 @@ public class ForecastFragment extends Fragment implements LoaderManager.LoaderCa
     public static final int COL_WEATHER_DESC = 2;
     public static final int COL_WEATHER_MAX_TEMP = 3;
     public static final int COL_WEATHER_MIN_TEMP = 4;
-    public static final int COL_LOCATION_SETTING = 5;
+    public static final int COL_WEATHER_CONDITION_ID = 5;
+    public static final int COL_LOCATION_SETTING = 6;
 
 
     public ForecastFragment() {
@@ -122,8 +125,9 @@ public class ForecastFragment extends Fragment implements LoaderManager.LoaderCa
     }
 
     private void updateWeather() {
-        String location = Utility.getPreferredLocation(getActivity());
-        new FetchWeatherTask(getActivity()).execute(location);
+        Intent intent = new Intent(getActivity(), SunshineService.class);
+        intent.putExtra(SunshineService.LOCATION_QUERY_EXTRA, Utility.getPreferredLocation(getActivity()));
+        getActivity().startService(intent);
     }
 
     @Override
