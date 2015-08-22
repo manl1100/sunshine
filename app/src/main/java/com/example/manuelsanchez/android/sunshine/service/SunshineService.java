@@ -27,6 +27,7 @@ import java.util.Vector;
 
 /**
  * Created by Manuel Sanchez on 8/18/15
+ * Replaced by SunshineSyncService
  */
 public class SunshineService extends IntentService {
 
